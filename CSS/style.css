@@ -2,8 +2,12 @@
     --main-cinza: #cccccc; 
     --main-branco: #ffffff;
     --main-preto: #000000;
-
 }
+
+*{
+    box-sizing: border-box;
+}
+
 body{
     background: url(../images/fundo.jpg);
     background-position: center center;
@@ -11,6 +15,10 @@ body{
     padding: 0;
     margin: 0;
     font-weight: 300;    
+}
+
+body, input{
+    font-family: 'Teko', sans-serif;
 }
 
 main{
@@ -50,19 +58,52 @@ main{
     color: rgba(255, 255, 255, 0.8);
 }
 
-.estatisticas{
+.box{
+    background: rgba(0, 0, 0, 0.6);
+    clip-path: polygon(calc(100% - 30px)
+    0, 100% 30px, 100% calc(100% - 30px),
+    calc(100% - 30px) 100%, 30px 100%, 0
+    calc(100% - 30px), 0 30px, 30px, 0);
+    border-left: 5px solid var(--main-cinza);
+    width: 30%;
+    height: 100%;
+}
+
+.equipamentos{
+    flex-basis: 32%;
+}
+
+.montador{
+    height: 100%;
+}
+
+.montador_conteudo{
+    padding: 2em 10%;
+}
+
+.peca{
+    padding: 1em 0;
+}
+
+.peca_titulo{
+    color: var(--main-branco);
+    text-transform: uppercase;
+    font-size: 2.5em;
+}
+
+.box estatistica{
     flex-basis: 23%;
     padding: 2em, 2em, 0;
 }
 
-.boxEstatisticas{
+.estatisticas{
     color: var(--main-branco);
     display: flex;
     align-items: flex-start;
     height: 25%;
 }
 
-.estatisticas-titulo{
+.estatisticas_titulo{
     font-size: 1.5em;
     border-bottom: 1px solid var (--main-cinza);
     flex-basis: 40%;
@@ -84,4 +125,47 @@ main{
     padding-bottom: 100%;
     border: 1px solid var(--main-cinza);
     border-radius: 50%;
+}
+
+.estatisticas_numero{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-46%);
+    width: 100%;
+    line-height: 100%;
+    text-align: center;
+    font-size: 3em;
+    margin: 0;
+}
+
+.estatisticas:nth-child(2n) .estatisticas_titulo{
+    order: 2;
+    text-align: right;
+}
+
+.estatisticas:nth-child(2n) .estatisticas_valor{
+    order: 1;
+    flex-basis: 35%;
+    margin: 10px 0 0;
+}
+
+.controle{
+    background: var(--main-preto);
+    border-radius: 25px;
+    float: right;
+    display: inline-flex;
+    padding: 5px;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.controle_ajuste{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 44px;
+    border-radius: 50%;
+    color: var(--main-cinza);
+    font-size: 4em;
+    background: var(--main-preto);
 }
