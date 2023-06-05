@@ -1,14 +1,12 @@
-const superrobo = document.querySelector("#galvatron")
+const subtrair = document.querySelector("#subtrair")
+const somar = document.querySelector("#somar")
+const braco = document.querySelector("#braco")
 
-superrobo.addEventListener("click", function(){
-    console.log("Click no Galvatron")
+somar.addEventListener("click", (evento) => {
+    braco.value = parseInt(braco.value) + 1
 })
-    
-//Java = Clicar/Fazer alguma coisa
 
-function dizOi(){
-    console.log("Olá")
-    console.log("Bem-Vindo ao Galvatron 2023")
-}
+subtrair.addEventListener("click", (evento) => {
+    braco.value = parseInt(braco.value) - 1
+})
 
-dizOi()
